@@ -11,7 +11,7 @@ function Item() {
   const fetchItem = async () => {
     const fetchItem = await fetch(
       `https://fortniteapi.io/v2/items/get?id=${placeId}&lang=en`,
-      { headers: { Authorization: "76301e8a-401ae375-0132dd17-a6ab2bfd" } }
+      { headers: { Authorization: `${process.env.REACT_APP_FORTNITE_API_KEY}` } }
     );
     const item = await fetchItem.json();
     setItem(item.item);
